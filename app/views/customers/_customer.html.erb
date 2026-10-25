@@ -1,0 +1,37 @@
+
+<%# This partial displays information for one customer. %>
+<%# Rails will reuse it for every customer in the database. %>
+
+<div class="customer-card">
+
+  <%# Display the customer's full name. %>
+  <h2><%= customer.full_name %></h2>
+
+  <%# Display the customer's uploaded profile image. %>
+  <% if customer.image.attached? %>
+    <%= image_tag customer.image,
+                  alt: customer.full_name,
+                  class: "customer-image" %>
+  <% else %>
+    <p>No image available</p>
+  <% end %>
+
+  <%# Display the customer's phone number. %>
+  <p>
+    <strong>Phone:</strong>
+    <%= customer.phone_number %>
+  </p>
+
+  <%# Display the email only if one is available. %>
+  <p>
+    <strong>Email:</strong>
+    <%= customer.email_address.presence || "Not provided" %>
+  </p>
+
+  <%# Display additional customer notes. %>
+  <p>
+    <strong>Notes:</strong>
+    <%= customer.notes.presence || "No notes available" %>
+  </p>
+
+</div>

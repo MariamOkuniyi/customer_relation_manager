@@ -1,0 +1,51 @@
+
+/* =========================================
+   Customer Relation Manager - Customer Cards
+   ========================================= */
+
+/* Container for all customer cards */
+.customers-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual customer card */
+.customer-card {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Customer name */
+.customer-card h2 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+/* Customer profile image */
+.customer-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Customer contact information */
+.customer-card p {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  margin-bottom: 12px;
+}
+
+/* Customer information labels */
+.customer-card strong {
+  color: #333333;
+}
