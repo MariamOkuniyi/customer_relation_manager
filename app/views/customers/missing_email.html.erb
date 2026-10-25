@@ -1,0 +1,30 @@
+
+<%# ============================================ %>
+<%# MISSING EMAIL CUSTOMERS PAGE                %>
+<%# Displays customers without email addresses %>
+<%# ============================================ %>
+
+<h1>Customers with Missing Email Addresses</h1>
+
+<%# Navigation links between the three customer pages. %>
+<nav class="customer-navigation">
+  <%= link_to "All Customers", root_path %>
+  <%= link_to "Alphabetized Customers", customers_alphabetized_path %>
+  <%= link_to "Missing Email", customers_missing_email_path %>
+</nav>
+
+<%# Display customers who have no email address. %>
+<div class="customers-container">
+
+  <% if @customers.any? %>
+
+    <%# Reuse the customer partial for each matching customer. %>
+    <%= render partial: "customer", collection: @customers %>
+
+  <% else %>
+
+    <p>All customers have email addresses.</p>
+
+  <% end %>
+
+</div>
